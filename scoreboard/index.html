@@ -664,7 +664,7 @@ input::placeholder { color: var(--muted); }
 
 .obs-player-info { display: flex; flex-direction: column; gap: 3px; }
 
-.obs-player-name { font-size: 15px; font-weight: 700; color: var(--text); }
+.obs-player-name { font-size: 15px; font-weight: 700; color: var(--text); flex-wrap: nowrap; }
 
 .obs-round-pips { display: flex; gap: 4px; flex-wrap: nowrap; }
 
@@ -1153,7 +1153,6 @@ function renderObs() {
         </div>
       </div>
    </div>
-      <span class="obs-live"><span class="obs-live-dot"></span>LIVE</span>
     </div>
     ${sorted.map((p) => {
       const total = getTotal(p.id);
