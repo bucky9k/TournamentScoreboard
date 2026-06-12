@@ -587,6 +587,31 @@ input::placeholder { color: var(--muted); }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text);
+
+  white-space: nowrap;
+}
+
+.obs-title-wrap {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  margin-right: 12px;
+}
+
+.obs-title {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-title 12s linear infinite;
+}
+
+@keyframes scroll-title {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .obs-live {
@@ -1117,7 +1142,9 @@ function renderObs() {
 
   document.getElementById('view-obs').innerHTML = `
     <div class="obs-header">
-      <span class="obs-title">${esc(S.config.tournament_name)}</span>
+      <div class="obs-title-wrap">
+  <span class="obs-title">${esc(S.config.tournament_name)}</span>
+</div>
       <span class="obs-live"><span class="obs-live-dot"></span>LIVE</span>
     </div>
     ${sorted.map((p) => {
