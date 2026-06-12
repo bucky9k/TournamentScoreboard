@@ -1147,9 +1147,12 @@ function renderObs() {
   document.getElementById('view-obs').innerHTML = `
     <div class="obs-header">
       <div class="obs-title-wrap">
-  <span class="obs-title">${esc(S.config.tournament_name)}</span>
-  <span class="obs-title">${esc(S.config.tournament_name)}</span>
-</div>
+        <div class="obs-title-track">
+          <span class="obs-title">${esc(S.config.tournament_name)}</span>
+          <span class="obs-title">${esc(S.config.tournament_name)}</span>
+        </div>
+      </div>
+   </div>
       <span class="obs-live"><span class="obs-live-dot"></span>LIVE</span>
     </div>
     ${sorted.map((p) => {
